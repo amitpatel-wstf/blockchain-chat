@@ -3,6 +3,7 @@ import ChatHeader from './ChatHeader';
 import ChatMessage, { MessageType } from './ChatMessage';
 import ChatInput from './ChatInput';
 import TypingIndicator from './TypingIndicator';
+import { getResponseByPrompt } from '@/api/prompt';
 
 // Sample data to simulate responses
 const sampleResponses = [
@@ -62,16 +63,16 @@ const sampleResponses = [
 
 // Suggested prompts for users
 const suggestedPrompts = [
-  "What's in my wallet 0xcB1C1FdE09f811B294172696404e88E658659905?",
-  "What NFTs do I own at 0xcB1C1FdE09f811B294172696404e88E658659905?",
+  "What's in my wallet 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
+  "What NFTs do I own at 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
   "Show my DeFi positions for 0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd",
-  "What is my net worth at 0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326?",
+  "What is my net worth at 0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326 ?",
   "Generate a PnL for my wallet 0xcB1C1FdE09f811B294172696404e88E658659905",
-  "What token approvals have I made for 0xcB1C1FdE09f811B294172696404e88E658659905?",
+  "What token approvals have I made for 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
   "Show my swap history for 0xcB1C1FdE09f811B294172696404e88E658659905",
-  "What chains am I active on 0xcB1C1FdE09f811B294172696404e88E658659905?",
-  "What's the domain for 0x94ef5300cbc0aa600a821ccbc561b057e456ab23?",
-  "What wallet owns vitalik.eth?"
+  "What chains am I active on 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
+  "What's the domain for 0x94ef5300cbc0aa600a821ccbc561b057e456ab23 ?",
+  "What wallet owns vitalik.eth ?"
 ];
 
 const SolanaChatContainer: React.FC = () => {
@@ -80,6 +81,7 @@ const SolanaChatContainer: React.FC = () => {
       id: '1',
       type: 'system',
       content: 'Hello! I\'m your Solana assistant. Ask me anything about the Solana blockchain, tokens, NFTs, or ecosystem projects.',
+      messageType : 'text'
     }
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -93,30 +95,45 @@ const SolanaChatContainer: React.FC = () => {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  const handleSendMessage = (content: string) => {
+  const handleSendMessage = async (content: string) => {
     const newMessage: MessageType = {
       id: Date.now().toString(),
       type: 'user',
       content,
+      messageType:"text"
     };
+
+
     
     setMessages(prev => [...prev, newMessage]);
     setIsTyping(true);
-    
-    // Simulate response delay
-    setTimeout(() => {
-      const randomResponse = sampleResponses[Math.floor(Math.random() * sampleResponses.length)];
-      
-      const responseMessage: MessageType = {
+    const message = await getResponseByPrompt(content);
+    const randomResponse = sampleResponses[Math.floor(Math.random() * sampleResponses.length)];
+    const responseMessage: MessageType = {
         id: (Date.now() + 1).toString(),
         type: 'system',
-        content: randomResponse.content,
+        content: message,
         infoCard: randomResponse.infoCard,
+        messageType: "code"
       };
       
       setIsTyping(false);
       setMessages(prev => [...prev, responseMessage]);
-    }, 1500);
+
+    
+    // // Simulate response delay
+    // setTimeout(() => {
+      
+    //   const responseMessage: MessageType = {
+    //     id: (Date.now() + 1).toString(),
+    //     type: 'system',
+    //     content: randomResponse.content,
+    //     infoCard: randomResponse.infoCard,
+    //   };
+      
+    //   setIsTyping(false);
+    //   setMessages(prev => [...prev, responseMessage]);
+    // }, 1500);
   };
 
   return (
