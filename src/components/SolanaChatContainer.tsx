@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import ChatHeader from './ChatHeader';
 import ChatMessage, { MessageType } from './ChatMessage';
@@ -61,6 +60,20 @@ const sampleResponses = [
   }
 ];
 
+// Suggested prompts for users
+const suggestedPrompts = [
+  "What's in my wallet 0xcB1C1FdE09f811B294172696404e88E658659905?",
+  "What NFTs do I own at 0xcB1C1FdE09f811B294172696404e88E658659905?",
+  "Show my DeFi positions for 0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd",
+  "What is my net worth at 0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326?",
+  "Generate a PnL for my wallet 0xcB1C1FdE09f811B294172696404e88E658659905",
+  "What token approvals have I made for 0xcB1C1FdE09f811B294172696404e88E658659905?",
+  "Show my swap history for 0xcB1C1FdE09f811B294172696404e88E658659905",
+  "What chains am I active on 0xcB1C1FdE09f811B294172696404e88E658659905?",
+  "What's the domain for 0x94ef5300cbc0aa600a821ccbc561b057e456ab23?",
+  "What wallet owns vitalik.eth?"
+];
+
 const SolanaChatContainer: React.FC = () => {
   const [messages, setMessages] = useState<MessageType[]>([
     {
@@ -120,7 +133,10 @@ const SolanaChatContainer: React.FC = () => {
         </div>
       </div>
       
-      <ChatInput onSendMessage={handleSendMessage} />
+      <ChatInput 
+        onSendMessage={handleSendMessage}
+        suggestedPrompts={suggestedPrompts}
+      />
     </div>
   );
 };
