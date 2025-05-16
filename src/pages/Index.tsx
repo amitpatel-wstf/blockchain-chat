@@ -15,7 +15,8 @@ const Index = () => {
           </span>
         </div>
         <div className="hidden md:flex space-x-4 text-sm">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation</a>
+          <a href="/" className="text-solana-purple hover:text-white transition-colors">Home</a>
+          <a href="/documentation" className="text-gray-400 hover:text-white transition-colors">Documentation</a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">API</a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
         </div>
