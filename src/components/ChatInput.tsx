@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Send } from 'lucide-react';
+import { Send, Copy } from 'lucide-react';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -22,6 +22,12 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, suggestedPrompts }
     onSendMessage(prompt);
   };
 
+  const handleCopyPrompt = (prompt: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent triggering the parent button's onClick
+    navigator.clipboard.writeText(prompt);
+    // You could add a toast notification here if desired
+  };
+
   return (
     <>
       {suggestedPrompts && suggestedPrompts.length > 0 && (
@@ -31,9 +37,16 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, suggestedPrompts }
               <button
                 key={index}
                 onClick={() => handlePromptClick(prompt)}
-                className="whitespace-nowrap px-3 py-1 bg-solana-purple/20 text-white text-sm rounded-full hover:bg-solana-purple/40 transition-colors"
+                className="whitespace-nowrap px-3 py-1 bg-solana-purple/20 text-white text-sm rounded-full hover:bg-solana-purple/40 transition-colors flex items-center group"
               >
-                {prompt}
+                <span className="truncate max-w-[300px]">{prompt}</span>
+                <span 
+                  onClick={(e) => handleCopyPrompt(prompt, e)}
+                  className="ml-2 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-white/10 transition-opacity"
+                  title="Copy to clipboard"
+                >
+                  <Copy className="h-3 w-3 text-white/70" />
+                </span>
               </button>
             ))}
           </div>
