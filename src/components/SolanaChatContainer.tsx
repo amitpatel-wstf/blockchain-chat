@@ -63,7 +63,7 @@ const sampleResponses = [
 
 // Suggested prompts for users
 const suggestedPrompts = [
-  "What's in my wallet 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
+  // "What's in my wallet 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
   "What NFTs do I own at 0xcB1C1FdE09f811B294172696404e88E658659905 ?",
   "Show my DeFi positions for 0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd",
   "What is my net worth at 0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326 ?",
@@ -107,12 +107,16 @@ const SolanaChatContainer: React.FC = () => {
     
     setMessages(prev => [...prev, newMessage]);
     setIsTyping(true);
-    const message = await getResponseByPrompt(content);
+    const rs = await getResponseByPrompt(content);
     const randomResponse = sampleResponses[Math.floor(Math.random() * sampleResponses.length)];
     const responseMessage: MessageType = {
         id: (Date.now() + 1).toString(),
         type: 'system',
-        content: message,
+        // @ts-ignore
+        content: rs?.data,
+        // @ts-ignore
+        summary: rs.summary,
+        
         infoCard: randomResponse.infoCard,
         messageType: "code"
       };

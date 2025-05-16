@@ -7,6 +7,7 @@ export type MessageType = {
   type: "user" | "system";
   content: string;
   messageType : string,
+  summary? : string,
   infoCard?: {
     title: string;
     data: {
@@ -30,7 +31,10 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         className={message.type === "user" ? "user-message" : "system-message"}
       >
         {message.messageType === "code" ? (
-          <CodeEditor codeSnippet={message.content} />
+          <>
+          {message.summary && <p>{message.summary}</p>}
+          {message?.content && <CodeEditor codeSnippet={message.content} />}
+          </>
         ) : (
           <p>{message.content}</p>
         )}

@@ -16,7 +16,7 @@ const ChatHeader = () => {
       </div>
       <div className="hidden md:flex items-center space-x-2">
         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-        <span className="text-xs text-green-400">Connected to Solana Mainnet</span>
+        <span className="text-xs text-green-400">Connected to Blockchains</span>
       </div>
     </div>
   );
