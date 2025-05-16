@@ -28,13 +28,41 @@ const Documentation = () => {
       name: 'Wallet & Identity',
       description: 'Wallet balance, NFTs, and identity resolution tools',
       tools: [
-        { name: 'getWalletTokenBalancesPrices', description: 'Shows tokens and USD values in wallet' },
-        { name: 'getWalletNFTs', description: 'Lists all NFTs by wallet' },
-        { name: 'getWalletActiveChains', description: 'Detects EVM chains used' },
-        { name: 'getWalletNetWorth', description: 'Calculates EVM wallet net worth' },
-        { name: 'getWalletProfitabilitySummary', description: 'PnL summary from txs' },
-        { name: 'resolveAddressToDomain', description: 'EVM address to ENS/Domain' },
-        { name: 'resolveENSDomain', description: 'ENS to wallet address' }
+        { 
+          name: 'getWalletTokenBalancesPrices', 
+          description: 'Shows tokens and USD values in wallet',
+          example: 'What\'s in my wallet 0xabc... on Ethereum?'
+        },
+        { 
+          name: 'getWalletNFTs', 
+          description: 'Lists all NFTs by wallet',
+          example: 'What NFTs do I own at 0xabc...?'
+        },
+        { 
+          name: 'getWalletActiveChains', 
+          description: 'Detects EVM chains used',
+          example: 'What chains am I active on?'
+        },
+        { 
+          name: 'getWalletNetWorth', 
+          description: 'Calculates EVM wallet net worth',
+          example: 'What is my net worth?'
+        },
+        { 
+          name: 'getWalletProfitabilitySummary', 
+          description: 'PnL summary from txs',
+          example: 'Generate a PnL for 0xabc...'
+        },
+        { 
+          name: 'resolveAddressToDomain', 
+          description: 'EVM address to ENS/Domain',
+          example: 'What\'s the domain for 0xabc...?'
+        },
+        { 
+          name: 'resolveENSDomain', 
+          description: 'ENS to wallet address',
+          example: 'Who owns vitalik.eth?'
+        }
       ]
     },
     {
@@ -42,14 +70,46 @@ const Documentation = () => {
       name: 'NFT',
       description: 'NFT collections, metadata, and market data',
       tools: [
-        { name: 'getNFTOwners', description: 'Returns owners of a given collection' },
-        { name: 'getNFTFloorPriceByContract', description: 'Floor price (ETH/USD)' },
-        { name: 'getNFTMetadata', description: 'Metadata for 1 NFT' },
-        { name: 'getNFTTraitsByCollection', description: 'Trait rarity heatmap' },
-        { name: 'getTopNFTCollectionsByTradingVolume', description: 'Top traded NFT sets' },
-        { name: 'getNFTSalePrices', description: 'Sale history of a tokenId' },
-        { name: 'getNFTTrades', description: 'Buyer/seller and tx list' },
-        { name: 'getWalletNFTCollections', description: 'NFT grouped by collection' }
+        { 
+          name: 'getNFTOwners', 
+          description: 'Returns owners of a given collection',
+          example: 'Who owns this NFT collection?'
+        },
+        { 
+          name: 'getNFTFloorPriceByContract', 
+          description: 'Floor price (ETH/USD)',
+          example: 'What\'s the floor price of Bored Apes?'
+        },
+        { 
+          name: 'getNFTMetadata', 
+          description: 'Metadata for 1 NFT',
+          example: 'Show me metadata for this Solana NFT'
+        },
+        { 
+          name: 'getNFTTraitsByCollection', 
+          description: 'Trait rarity heatmap',
+          example: 'Show me rarest NFTs in this collection'
+        },
+        { 
+          name: 'getTopNFTCollectionsByTradingVolume', 
+          description: 'Top traded NFT sets',
+          example: 'What NFT collections are trending?'
+        },
+        { 
+          name: 'getNFTSalePrices', 
+          description: 'Sale history of a tokenId',
+          example: 'How much was this NFT sold for last?'
+        },
+        { 
+          name: 'getNFTTrades', 
+          description: 'Buyer/seller and tx list',
+          example: 'Who traded this collection recently?'
+        },
+        { 
+          name: 'getWalletNFTCollections', 
+          description: 'NFT grouped by collection',
+          example: 'Which collections do I own?'
+        }
       ]
     },
     {
@@ -57,11 +117,31 @@ const Documentation = () => {
       name: 'Token Analytics',
       description: 'Token prices, holders, and market statistics',
       tools: [
-        { name: 'getTokenPrice', description: 'Price of any token' },
-        { name: 'getTokenHolderStats', description: 'Count of holders' },
-        { name: 'getHistoricalTokenHolders', description: 'Holder chart' },
-        { name: 'getTopProfitableWalletPerToken', description: 'ROI leaderboard' },
-        { name: 'getTokenStats', description: 'Market cap, liquidity, etc.' }
+        { 
+          name: 'getTokenPrice', 
+          description: 'Price of any token',
+          example: 'What\'s the price of ETH?'
+        },
+        { 
+          name: 'getTokenHolderStats', 
+          description: 'Count of holders',
+          example: 'How many people hold $CGPT?'
+        },
+        { 
+          name: 'getHistoricalTokenHolders', 
+          description: 'Holder chart',
+          example: 'What\'s the change in $ETH holders in the last 30 days?'
+        },
+        { 
+          name: 'getTopProfitableWalletPerToken', 
+          description: 'ROI leaderboard',
+          example: 'Who are the most profitable traders of $ETH?'
+        },
+        { 
+          name: 'getTokenStats', 
+          description: 'Market cap, liquidity, etc.',
+          example: 'What\'s the volume of $LINK?'
+        }
       ]
     },
     {
@@ -69,11 +149,31 @@ const Documentation = () => {
       name: 'Market Insights',
       description: 'Trending tokens and market analytics',
       tools: [
-        { name: 'getTrendingTokens', description: 'Hot tokens on-chain' },
-        { name: 'getTopGainersTokens', description: 'Daily growth leaders' },
-        { name: 'getTopERC20TokensByMarketCap', description: 'Large cap tokens' },
-        { name: 'searchTokens', description: 'Search by name/category' },
-        { name: 'getFilteredTokens', description: 'Complex discovery filters' }
+        { 
+          name: 'getTrendingTokens', 
+          description: 'Hot tokens on-chain',
+          example: 'What tokens are trending?'
+        },
+        { 
+          name: 'getTopGainersTokens', 
+          description: 'Daily growth leaders',
+          example: 'Which tokens gained the most today?'
+        },
+        { 
+          name: 'getTopERC20TokensByMarketCap', 
+          description: 'Large cap tokens',
+          example: 'Top ERC-20 tokens by market cap'
+        },
+        { 
+          name: 'searchTokens', 
+          description: 'Search by name/category',
+          example: 'Find tokens related to AI'
+        },
+        { 
+          name: 'getFilteredTokens', 
+          description: 'Complex discovery filters',
+          example: 'Tokens with high volume and low cap'
+        }
       ]
     },
     {
@@ -81,12 +181,36 @@ const Documentation = () => {
       name: 'Solana',
       description: 'Solana wallet, SPL tokens, and NFTs',
       tools: [
-        { name: 'getPortfolio', description: 'SOL + SPL + NFTs summary' },
-        { name: 'balance', description: 'SOL balance' },
-        { name: 'getSPL', description: 'Non-native tokens' },
-        { name: 'getNFTs', description: 'All NFTs for wallet' },
-        { name: 'getNFTMetadata', description: 'Detail of a Solana NFT' },
-        { name: 'getSwapsByWalletAddress', description: 'Solana DEX swap history' }
+        { 
+          name: 'getPortfolio', 
+          description: 'SOL + SPL + NFTs summary',
+          example: 'What\'s in my Solana wallet?'
+        },
+        { 
+          name: 'balance', 
+          description: 'SOL balance',
+          example: 'Show my SOL balance'
+        },
+        { 
+          name: 'getSPL', 
+          description: 'Non-native tokens',
+          example: 'What SPL tokens do I own?'
+        },
+        { 
+          name: 'getNFTs', 
+          description: 'All NFTs for wallet',
+          example: 'What NFTs do I own on Solana?'
+        },
+        { 
+          name: 'getNFTMetadata', 
+          description: 'Detail of a Solana NFT',
+          example: 'Show me metadata for this Solana NFT'
+        },
+        { 
+          name: 'getSwapsByWalletAddress', 
+          description: 'Solana DEX swap history',
+          example: 'Recent swaps on Solana'
+        }
       ]
     }
   ];
@@ -95,7 +219,8 @@ const Documentation = () => {
     ...category,
     tools: category.tools.filter(tool => 
       tool.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      tool.description.toLowerCase().includes(searchTerm.toLowerCase())
+      tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (tool.example && tool.example.toLowerCase().includes(searchTerm.toLowerCase()))
     )
   })).filter(category => category.tools.length > 0);
 
@@ -133,7 +258,7 @@ const Documentation = () => {
             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
             <input
               className="w-full pl-10 pr-4 py-2 bg-gray-800/80 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solana-purple text-white"
-              placeholder="Search tools by name or description..."
+              placeholder="Search tools by name, description, or example..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -198,8 +323,9 @@ const Documentation = () => {
                       <Table>
                         <TableHeader>
                           <TableRow className="hover:bg-transparent">
-                            <TableHead className="w-1/3 text-white">Tool Name</TableHead>
-                            <TableHead className="text-white">Description</TableHead>
+                            <TableHead className="w-1/4 text-white">Tool Name</TableHead>
+                            <TableHead className="w-1/3 text-white">Description</TableHead>
+                            <TableHead className="text-white">Example Query</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -207,6 +333,7 @@ const Documentation = () => {
                             <TableRow key={tool.name} className="border-gray-700 hover:bg-gray-700/50">
                               <TableCell className="font-mono text-solana-purple">{tool.name}</TableCell>
                               <TableCell className="text-gray-300">{tool.description}</TableCell>
+                              <TableCell className="text-gray-300 italic">{tool.example}</TableCell>
                             </TableRow>
                           ))}
                         </TableBody>
