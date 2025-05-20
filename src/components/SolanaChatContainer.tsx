@@ -80,7 +80,7 @@ const SolanaChatContainer: React.FC = () => {
     {
       id: '1',
       type: 'system',
-      content: 'Hello! I\'m your Solana assistant. Ask me anything about the Solana blockchain, tokens, NFTs, or ecosystem projects.',
+      content: 'Hello! I\'m your BlockChain assistant. Ask me anything about the BlockChain, tokens, NFTs, or ecosystem projects.',
       messageType : 'text'
     }
   ]);

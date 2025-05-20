@@ -10,8 +10,8 @@ const ChatHeader = () => {
           <MessageCircle className="h-6 w-6 text-solana-purple" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white">Solana Info Chat</h1>
-          <p className="text-sm text-gray-400">Ask anything about Solana blockchain</p>
+          <h1 className="text-xl font-bold text-white"> BlockChain Info Chat</h1>
+          <p className="text-sm text-gray-400">Ask anything about BlockChain</p>
         </div>
       </div>
       <div className="hidden md:flex items-center space-x-2">

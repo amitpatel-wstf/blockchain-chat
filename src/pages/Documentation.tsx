@@ -247,10 +247,10 @@ const Documentation = () => {
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-solana-purple to-solana-accent bg-clip-text text-transparent">
-              SolInfo Documentation
+              BlockChain Info Documentation
             </h1>
             <p className="text-gray-400">
-              Comprehensive guide to using our Solana and EVM blockchain tools
+              Comprehensive guide to using our BlockChain and EVM blockchain tools
             </p>
           </div>
 

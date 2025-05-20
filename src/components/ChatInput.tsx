@@ -59,7 +59,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, suggestedPrompts }
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Ask about Solana..."
+            placeholder="Ask about Blockchain..."
             className="flex-1 bg-transparent border-0 focus:ring-0 text-white placeholder-gray-500 outline-none"
           />
           <button
