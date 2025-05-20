@@ -42,7 +42,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, suggestedPrompts }
                 <span className="truncate max-w-[300px]">{prompt}</span>
                 <span 
                   onClick={(e) => handleCopyPrompt(prompt, e)}
-                  className="ml-2 p-1 rounded-full opacity-0 opacity-100 hover:bg-white/10 transition-opacity"
+                  className="ml-2 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-white/10 transition-opacity"
                   title="Copy to clipboard"
                 >
                   <Copy className="h-3 w-3 text-white/70" />

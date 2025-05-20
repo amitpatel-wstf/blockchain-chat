@@ -74,7 +74,7 @@ function CodeEditor({ codeSnippet }: { codeSnippet: string }) {
         ))}
         <button
           onClick={(e) => handleCopyPrompt(codeSnippet, e)}
-          className="ml-2 p-1 rounded-full opacity-0 opacity-100 hover:bg-white/10 transition-opacity"
+          className="ml-2 p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-white/10 transition-opacity"
           title="Copy to clipboard"
         >
           <Copy className="h-3 w-3 text-white/70" />
