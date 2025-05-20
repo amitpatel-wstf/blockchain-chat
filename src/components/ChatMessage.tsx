@@ -32,7 +32,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
       >
         {message.messageType === "code" ? (
           <>
-          {message.summary && <p>{message.summary}</p>}
+          {message.summary &&<p className="max-h-[200px] overflow-y-scroll mb-2"> <p className="text-xs text-gray-400">{message.summary}</p></p>}
           {message?.content && <CodeEditor codeSnippet={message.content} />}
           </>
         ) : (

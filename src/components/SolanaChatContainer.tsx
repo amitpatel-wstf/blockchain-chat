@@ -96,6 +96,9 @@ const SolanaChatContainer: React.FC = () => {
   }, [messages, isTyping]);
 
   const handleSendMessage = async (content: string) => {
+    if(isTyping){
+        return;
+    }
     const newMessage: MessageType = {
       id: Date.now().toString(),
       type: 'user',
